@@ -33,6 +33,9 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
 
+  validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "please enter a valid e-mail adress" }
+  validates :password, presence: true, length: { minimum: 6 }
+
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
   end
