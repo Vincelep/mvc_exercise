@@ -19,7 +19,7 @@
 							</thead>
 							<tbody>
 								<% @items.each do |item| %>
-									<%= render partial: "administration/items/table_row", locals: {item: item} %>
+									<%= render partial: "/items/table_row", locals: {item: item} %>
 								<% end %>
 							</tbody>
 						</table>
