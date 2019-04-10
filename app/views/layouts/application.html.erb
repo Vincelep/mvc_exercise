@@ -10,6 +10,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <div class="d-flex">
+
+        <%= render partial: "layouts/administration/sidebar" %>
+
+        <div class="main">
+
+          <%= render "layouts/shared/flash_messages" %>
+
+          <main class="content">
+            <div class="container-fluid p-0">
+              <%= yield %>
+            </div>
+          </main>
+
+        </div>
+
+      </div>
+    </div>
   </body>
 </html>
