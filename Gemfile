@@ -11,6 +11,7 @@ File.read('./.ruby-version')
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coffee-rails', '~> 4.2'
 gem 'devise', '~> 4.5.0'
+gem 'faker', '~> 1.8', '>= 1.8.7'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'jbuilder', '~> 2.5'
@@ -20,13 +21,11 @@ gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 gem 'sass-rails', '~> 5.0'
 gem 'sidekiq', '~> 5.2.2'
-gem 'table_print'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'factory_bot_rails', '~> 4.0'
-  gem 'faker', '~> 1.8', '>= 1.8.7'
   gem 'pry-byebug', '~> 3.6'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
   gem 'sandi_meter', '~> 1.2'
@@ -40,10 +39,12 @@ group :development do
   gem 'rubocop-rspec', require: false
   gem 'spring', '~> 2.0', '>= 2.0.2'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'table_print'
 end
 
 group :test do
   gem 'database_cleaner', '~> 1.7'
+  gem 'nyan-cat-formatter'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov', '~> 0.16.1', require: false
 end
