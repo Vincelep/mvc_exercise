@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Administration::ItemsController, type: :controller do
-  describe "GET #index" do
+  skip "GET #index" do
     it "returns http success" do
       get :index
       expect(response).to have_http_status(:success)
@@ -16,7 +16,7 @@ RSpec.describe Administration::ItemsController, type: :controller do
     let(:item) { create(:item) }
     let(:params) { { id: item.id } }
 
-    context 'without params' do
+    skip 'without params' do
       it { expect(response).to have_http_status(:success) }
     end
   end
