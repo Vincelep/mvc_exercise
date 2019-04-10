@@ -8,15 +8,45 @@
 		<% end %>
 
 		<ul class="sidebar-nav">
-
+			<% if user_signed_in? %>
+			<li class="sidebar-item">
+				<%= link_to destroy_user_session_path, method: :delete, class: "sidebar-link" do %>
+					<span class="align-middle">
+						Log Out
+					</span>
+				<% end %>
+			</li>
+			<% elsif admin_signed_in? %>
+			<li class="sidebar-item">
+				<%= link_to destroy_admin_session_path, method: :delete, class: "sidebar-link" do %>
+					<span class="align-middle">
+						Log Out
+					</span>
+				<% end %>
+			</li>
 			<li class="sidebar-item">
 		    <%= link_to administration_items_path, class: "sidebar-link" do %>
           <span class="align-middle">
-          	Items
+          	Manage Items
           </span>
-        <% end %>
+				<% end %>
 			</li>
-
+			<% else %>
+			<li class="sidebar-item">
+				<%= link_to new_admin_session_path, class: "sidebar-link" do %>
+					<span class="align-middle">
+						Log In as Admin
+					</span>
+				<% end %>
+			</li>
+			<li class="sidebar-item">
+				<%= link_to new_user_session_path, class: "sidebar-link" do %>
+					<span class="align-middle">
+						Log In as User
+					</span>
+				<% end %>
+			</li>
+			<% end %>
 		</ul>
 
 	</div>
