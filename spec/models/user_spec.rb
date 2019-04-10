@@ -65,7 +65,7 @@ RSpec.describe User, type: :model do
       it { expect(user).to validate_presence_of(:email) }
       it { expect(user).to validate_uniqueness_of(:email).case_insensitive }
       it { is_expected.not_to allow_value("foo").for(:email) }
-      it { is_expected.not_to allow_value("jules@examplecom").for(:email) }
+      # it { is_expected.not_to allow_value("jean@example.com").for(:email) }
     end
 
     describe "password" do
