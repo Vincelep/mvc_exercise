@@ -25,6 +25,7 @@
 #
 
 class User < ApplicationRecord
+  after_create :user_profile
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -42,5 +43,9 @@ class User < ApplicationRecord
 
   def self.emails_of_all_users
     User.pluck(:email)
+  end
+
+  def user_profile
+    Profile.create(user_id: id)
   end
 end

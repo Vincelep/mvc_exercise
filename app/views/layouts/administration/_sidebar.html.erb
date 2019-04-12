@@ -31,6 +31,13 @@
           </span>
 				<% end %>
 			</li>
+			<li class="sidebar-item">
+		    <%= link_to administration_profiles_path, class: "sidebar-link" do %>
+          <span class="align-middle">
+          	Manage Users
+          </span>
+				<% end %>
+			</li>
 			<% else %>
 			<li class="sidebar-item">
 				<%= link_to new_admin_session_path, class: "sidebar-link" do %>
