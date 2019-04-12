@@ -17,6 +17,7 @@ class Item < ApplicationRecord
   validates :original_price, presence: true, numericality: { greater_than: 0 }
   validates :has_discount, inclusion: { in: [true, false] }
   validates :discount_percentage, numericality: { only_integer: true }, inclusion: { in: 1..99 }
+  validates :name, presence: true
 
   def price
     if has_discount == true
