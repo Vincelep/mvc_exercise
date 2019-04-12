@@ -5,9 +5,10 @@
 # Table name: items
 #
 #  id                  :bigint(8)        not null, primary key
-#  original_price      :float            not null
-#  has_discount        :boolean          default(FALSE)
 #  discount_percentage :integer          default(0)
+#  has_discount        :boolean          default(FALSE)
+#  name                :string
+#  original_price      :float            not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #
