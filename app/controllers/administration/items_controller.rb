@@ -2,6 +2,7 @@
 
 module Administration
   class ItemsController < AdministrationController
+    # before_action :authenticate_user!
     def index
       @emails = User.emails_of_all_users
       @items = Item.all
