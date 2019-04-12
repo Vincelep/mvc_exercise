@@ -26,12 +26,18 @@ class Item < ApplicationRecord
   end
 
   def self.average_price
-    items = Item.all
-    sum = 0
-    items.each do |item|
-      item.price
-      sum += item.price / items.count
-    end
-    sum.round(2)
+    return if Item.count.zero?
+
+    Item.average(original_price * (100 - discount_percentage) / 100).round(2)
   end
+
+  # def self.average_price
+  #   items = Item.all
+  #   sum = 0
+  #   items.each do |item|
+  #     item.price
+  #     sum += item.price / items.count
+  #   end
+  #   sum.round(2)
+  # end
 end
